@@ -80,7 +80,7 @@ DISCORD_TOKEN=your_discord_bot_token_here
 ```
 set COMMANDLINE_ARGS=--api
 ```
-Then run:
+   Then run:
 ```
  webui-user.bat
 ``` 
@@ -93,9 +93,9 @@ http://127.0.0.1:7860
 
 ```
 python bot.py
+```
 
 The bot should appear online in Discord.
-```
 
 --------------------------------------------------------------------
 
