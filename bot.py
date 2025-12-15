@@ -11,7 +11,6 @@ from PIL import Image
 from io import BytesIO
 
 # Paths & Environment
-
 BASE_DIR = Path(__file__).parent
 IMAGES_DIR = BASE_DIR / "images"
 IMAGES_DIR.mkdir(exist_ok=True)
@@ -20,27 +19,23 @@ load_dotenv(dotenv_path=BASE_DIR / ".env")
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 # Bot Setup
-
 intents = discord.Intents.default()
 intents.message_content = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Events
-
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user} (ID: {bot.user.id})")
     print("Bot is online and ready.")
 
 # Commands
-
 @bot.command()
 async def ping(ctx):
     await ctx.send("pong")
 
 # Image Generation (LOCAL STABLE DIFFUSION)
-
 async def generate_image(prompt: str) -> str:
     url = "http://127.0.0.1:7860/sdapi/v1/txt2img"
 
@@ -93,7 +88,6 @@ async def image(ctx, *, prompt: str = None):
     )
 
 # Cooldown Error
-
 @image.error
 async def image_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
@@ -102,5 +96,5 @@ async def image_error(ctx, error):
         )
 
 # Run Bot
-
 bot.run(TOKEN)
+
