@@ -53,7 +53,7 @@ Setup Instructions
 1. Clone the repository:
 
 ```
-git clone <IshankMittal> cd <Discord-image-generation-bot-through-Stable-Diffusion-AUTOMATIC1111>
+git clone https://github.com/IshankMittal/Discord-image-generation-bot-through-Stable-Diffusion-AUTOMATIC1111-
 ```
 
 3. Create and activate a virtual environment:
