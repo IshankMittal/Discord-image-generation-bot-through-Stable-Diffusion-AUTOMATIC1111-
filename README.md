@@ -13,7 +13,7 @@ generated images are saved locally for reference and history.**
 
 Features
 
-- Generate AI images using a Discord slash command (/image)
+- Generate AI images using a Discord **slash command (/image)**
 - Uses Stable Diffusion locally without paid APIs
 - GPU-accelerated image generation
 - Async-safe request handling to keep the bot responsive
@@ -28,6 +28,7 @@ Tech Stack
 
 - Python
 - discord.py
+- Discord Slash Commands (app_commands)
 - Stable Diffusion (AUTOMATIC1111)
 - REST API (local inference)
 - Requests
@@ -131,8 +132,6 @@ Setup Instructions
 
 Usage
 
-Usage
-
 In any Discord channel where the bot is added:
 
 1. Type `/`
@@ -143,8 +142,7 @@ In any Discord channel where the bot is added:
 Example:
 Generate an image with the prompt "a futuristic cyberpunk bike".
 
-why Slash Commands
-
+**why Slash Commands?**
 This bot uses Discord slash commands instead of traditional prefix commands.
 Slash commands provide a modern, structured interface and do not require
 message content access.
