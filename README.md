@@ -116,8 +116,7 @@ Sent back to Discord
 **Usage**
 
 In any Discord channel where the bot is added:
-
-!image a futuristic cyberpunk bike
+Give prompt like "!image a futuristic cyberpunk bike"
 
 The bot will generate and send an image based on the prompt.
 
