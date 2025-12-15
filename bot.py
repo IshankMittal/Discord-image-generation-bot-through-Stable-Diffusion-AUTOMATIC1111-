@@ -36,7 +36,7 @@ async def ping(ctx):
     await ctx.send("pong")
 
 # Image Generation (LOCAL STABLE DIFFUSION)
-async def generate_image(prompt: str) -> str:
+async def generate_image(prompt: str, username: str) -> str:
     url = "http://127.0.0.1:7860/sdapi/v1/txt2img"
 
     payload = {
@@ -58,20 +58,24 @@ async def generate_image(prompt: str) -> str:
         raise RuntimeError("Stable Diffusion returned no images")
 
     image_base64 = data["images"][0]
-
     if "," in image_base64:
         image_base64 = image_base64.split(",", 1)[1]
 
     image_bytes = base64.b64decode(image_base64)
     image = Image.open(BytesIO(image_bytes))
 
-    output_path = IMAGES_DIR / "output.png"
+    # Create user folder
+    user_dir = IMAGES_DIR / username
+    user_dir.mkdir(exist_ok=True)
+
+    # Timestamped filename
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    output_path = user_dir / f"{timestamp}.png"
+
     image.save(output_path)
-
     return str(output_path)
-
+    
 # !image Command
-
 @bot.command()
 @cooldown(1, 30, BucketType.user)
 async def image(ctx, *, prompt: str = None):
@@ -80,7 +84,7 @@ async def image(ctx, *, prompt: str = None):
         return
 
     async with ctx.typing():
-        image_path = await generate_image(prompt)
+        image_path = await generate_image(prompt, ctx.author.name)
 
     await ctx.send(
         # content=f"🖼️ Generated image for:\n**{prompt}**",
@@ -97,4 +101,5 @@ async def image_error(ctx, error):
 
 # Run Bot
 bot.run(TOKEN)
+
 
