@@ -1,4 +1,4 @@
-**Discord Image Generator Bot using Stable Diffusion (AUTOMATIC1111)**
+Discord Image Generator Bot using Stable Diffusion (AUTOMATIC1111)
 
 This project is a Discord bot that generates AI images using a locally hosted
 Stable Diffusion model through AUTOMATIC1111. The bot does not rely on any paid
@@ -10,19 +10,19 @@ REST API, and returns the generated image back to the Discord channel.
 
 --------------------------------------------------------------------
 
-**Features**
+Features
 
 - Generate AI images using a Discord command (!image)
-- Uses Stable Diffusion locally (no paid APIs)
+- Uses Stable Diffusion locally without paid APIs
 - GPU-accelerated image generation
-- Async-safe request handling
-- Cooldown system to prevent spam
+- Async-safe request handling to keep the bot responsive
+- Cooldown system to prevent command spam
 - Clean and modular project structure
-- Easy to extend to cloud or API-based solutions later
+- Can be extended later to cloud or API-based image generation
 
 --------------------------------------------------------------------
 
-**Tech Stack**
+Tech Stack
 
 - Python
 - discord.py
@@ -31,11 +31,11 @@ REST API, and returns the generated image back to the Discord channel.
 - Requests
 - Pillow
 - Asyncio
-- NVIDIA GPU (local execution)
+- NVIDIA GPU for local execution
 
 --------------------------------------------------------------------
 
-**How It Works**
+How It Works
 
 Discord User
     |
@@ -54,43 +54,41 @@ Stable Diffusion (AUTOMATIC1111)
 Generated Image
     |
     v
-Sent back to Discord
+Image sent back to Discord
 
 --------------------------------------------------------------------
 
-**Prerequisites**
+Prerequisites
 
-- Python 3.12 (for Discord bot)
-- Python 3.10 (for Stable Diffusion WebUI)
+- Python 3.12 for the Discord bot
+- Python 3.10 for Stable Diffusion WebUI
 - NVIDIA GPU with CUDA support
 - Stable Diffusion WebUI (AUTOMATIC1111)
 - Discord bot token
 
 --------------------------------------------------------------------
 
-**Setup Instructions**
+Setup Instructions
 
 1. Clone the repository
 
    git clone <your-repo-url>
    cd <repo-folder>
 
-2. Create and activate virtual environment
+2. Create and activate a virtual environment
 
    python -m venv .venv
    .venv\Scripts\activate
 
-3. Install dependencies
+3. Install required dependencies
 
    pip install -r requirements.txt
 
 4. Configure environment variables
 
-   Create a .env file with the following content:
+   Create a .env file and add:
 
    DISCORD_TOKEN=your_discord_bot_token_here
-
-   Note: Do not upload the .env file to GitHub.
 
 5. Start Stable Diffusion with API enabled
 
@@ -113,15 +111,16 @@ Sent back to Discord
 
 --------------------------------------------------------------------
 
-**Usage**
+Usage
 
-In any Discord channel where the bot is added:
-Give prompt like "!image a futuristic cyberpunk bike"
+In any Discord channel where the bot is added, use:
 
-The bot will generate and send an image based on the prompt.
+!image a futuristic cyberpunk bike
+
+The bot will generate and send an AI-generated image based on the prompt.
 
 --------------------------------------------------------------------
 
-**License**
+License
 
 This project is intended for educational and personal use.
