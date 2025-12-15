@@ -53,22 +53,21 @@ Setup Instructions
 1. Clone the repository
 
 ```
-git clone <your-repo-url>
-   cd <repo-folder>
+git clone <IshankMittal> cd <Discord-image-generation-bot-through-Stable-Diffusion-AUTOMATIC1111>
 ```
 
 3. Create and activate a virtual environment
 
-   ```
+ ```
    python -m venv .venv
-   .venv\Scripts\activate 
-   ```
+   .venv\Scripts\activate
+ ```
 
 4. Install required dependencies
 
-   ```
+```
    pip install -r requirements.txt
-   ```
+```
 
 5. Configure environment variables
 
