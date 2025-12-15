@@ -118,9 +118,3 @@ In any Discord channel where the bot is added, use:
 !image a futuristic cyberpunk bike
 
 The bot will generate and send an AI-generated image based on the prompt.
-
---------------------------------------------------------------------
-
-License
-
-This project is intended for educational and personal use.
