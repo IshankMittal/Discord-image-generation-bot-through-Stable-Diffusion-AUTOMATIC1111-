@@ -1,4 +1,4 @@
-Discord Image Generator Bot using Stable Diffusion (AUTOMATIC1111)
+**Discord Image Generator Bot using Stable Diffusion (AUTOMATIC1111)**
 
 This project is a Discord bot that generates AI images using a locally hosted
 Stable Diffusion model through AUTOMATIC1111. The bot does not rely on any paid
@@ -10,7 +10,7 @@ REST API, and returns the generated image back to the Discord channel.
 
 --------------------------------------------------------------------
 
-Features
+**Features**
 
 - Generate AI images using a Discord command (!image)
 - Uses Stable Diffusion locally (no paid APIs)
@@ -22,7 +22,7 @@ Features
 
 --------------------------------------------------------------------
 
-Tech Stack
+**Tech Stack**
 
 - Python
 - discord.py
@@ -35,7 +35,7 @@ Tech Stack
 
 --------------------------------------------------------------------
 
-How It Works
+**How It Works**
 
 Discord User
     |
@@ -58,7 +58,7 @@ Sent back to Discord
 
 --------------------------------------------------------------------
 
-Prerequisites
+**Prerequisites**
 
 - Python 3.12 (for Discord bot)
 - Python 3.10 (for Stable Diffusion WebUI)
@@ -68,7 +68,7 @@ Prerequisites
 
 --------------------------------------------------------------------
 
-Setup Instructions
+**Setup Instructions**
 
 1. Clone the repository
 
@@ -113,7 +113,7 @@ Setup Instructions
 
 --------------------------------------------------------------------
 
-Usage
+**Usage**
 
 In any Discord channel where the bot is added:
 
@@ -123,43 +123,6 @@ The bot will generate and send an image based on the prompt.
 
 --------------------------------------------------------------------
 
-Security Notes
-
-- Bot token is stored in .env and never committed
-- Virtual environment (.venv) is excluded from GitHub
-- Generated images are ignored using .gitignore
-- Stable Diffusion files and models are not included in the repository
-
---------------------------------------------------------------------
-
-Limitations
-
-- Stable Diffusion must be running locally
-- System must remain powered on
-- Not intended for large-scale public deployment
-- Real person likeness is approximate due to model behavior
-
---------------------------------------------------------------------
-
-Future Improvements
-
-- Slash command support (/image)
-- Prompt presets and styles
-- Automatic negative prompts
-- Queue system for multiple users
-- Cloud or API-based deployment
-- Additional image configuration options
-
---------------------------------------------------------------------
-
-Author
-
-This project was built as a real-world application to explore Discord bot
-development, AI model integration, REST APIs, async programming, and local GPU
-inference.
-
---------------------------------------------------------------------
-
-License
+**License**
 
 This project is intended for educational and personal use.
