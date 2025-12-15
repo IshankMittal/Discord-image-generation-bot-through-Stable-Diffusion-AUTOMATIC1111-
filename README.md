@@ -1,12 +1,13 @@
 Discord Image Generator Bot using Stable Diffusion (AUTOMATIC1111)
 
 This project is a Discord bot that generates AI images using a locally hosted
-Stable Diffusion model through AUTOMATIC1111. The bot does not rely on any paid
-APIs and performs image generation entirely on the local machine using GPU
+Stable Diffusion model through AUTOMATIC1111. The bot does **not rely on any paid
+APIs** and performs image generation entirely on the local machine using GPU
 acceleration.
 
 The bot listens to Discord commands, sends prompts to a local Stable Diffusion
-REST API, and returns the generated image back to the Discord channel.
+REST API, and returns the generated image back to the Discord channel. **All
+generated images are saved locally for reference and history.**
 
 --------------------------------------------------------------------
 
@@ -17,6 +18,7 @@ Features
 - GPU-accelerated image generation
 - Async-safe request handling to keep the bot responsive
 - Cooldown system to prevent command spam
+- Saves all generated images locally (image history)
 - Clean and modular project structure
 - Can be extended later to cloud or API-based image generation
 
@@ -54,7 +56,23 @@ Stable Diffusion (AUTOMATIC1111)
 Generated Image
     |
     v
-Image sent back to Discord
+Image sent back to Discord and saved locally
+
+--------------------------------------------------------------------
+
+Local Image Storage
+
+All generated images are saved on the local machine inside the project folder.
+
+Example structure:
+
+images/
+├── <discord_username>/
+│   ├── YYYY-MM-DD_HH-MM-SS.png
+│   ├── YYYY-MM-DD_HH-MM-SS.png
+
+Images are organized by Discord username and timestamp to preserve generation
+history.
 
 --------------------------------------------------------------------
 
@@ -117,4 +135,4 @@ In any Discord channel where the bot is added, use:
 
 !image a futuristic cyberpunk bike
 
-The bot will generate and send an AI-generated image based on the prompt.
+The bot will generate an AI image, send it to Discord, and store it locally.
