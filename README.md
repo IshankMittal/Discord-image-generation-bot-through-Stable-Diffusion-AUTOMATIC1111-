@@ -37,27 +37,19 @@ Tech Stack
 - NVIDIA GPU for local execution
 
 --------------------------------------------------------------------
-
 How It Works
 
-Discord User
-    |
-    |  |  /image <prompt>
-    v
-Discord Bot (Python)
-    |
-    |  HTTP request
-    v
-Local Stable Diffusion API (127.0.0.1:7860)
-    |
-    v
-Stable Diffusion (AUTOMATIC1111)
-    |
-    v
-Generated Image
-    |
-    v
-Image sent back to Discord and saved locally
+Discord User | | | /image v Discord Bot (Python) | | HTTP request v Local Stable Diffusion API (127.0.0.1:7860) | v Stable Diffusion (AUTOMATIC1111) | v Generated Image | v Image sent back to Discord and saved locally
+
+Local Image Storage
+
+All generated images are saved on the local machine inside the project folder.
+
+Example structure:
+
+images/ ├── <discord_username>/ │ ├── YYYY-MM-DD_HH-MM-SS.png │ ├── YYYY-MM-DD_HH-MM-SS.png
+
+Images are organized by Discord username and timestamp to preserve generation history.
 
 --------------------------------------------------------------------
 
