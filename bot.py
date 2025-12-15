@@ -1,7 +1,7 @@
 import asyncio
+import time
 import discord
-from discord.ext import commands
-from discord.ext.commands import cooldown, BucketType
+from discord import app_commands
 from dotenv import load_dotenv
 from pathlib import Path
 import os
@@ -9,6 +9,7 @@ import requests
 import base64
 from PIL import Image
 from io import BytesIO
+from datetime import datetime
 
 # Paths & Environment
 BASE_DIR = Path(__file__).parent
@@ -18,24 +19,16 @@ IMAGES_DIR.mkdir(exist_ok=True)
 load_dotenv(dotenv_path=BASE_DIR / ".env")
 TOKEN = os.getenv("DISCORD_TOKEN")
 
-# Bot Setup
+# Cooldown Config
+COOLDOWN_SECONDS = 30
+user_cooldowns = {}
+
+# Discord Client Setup
 intents = discord.Intents.default()
-intents.message_content = True
+client = discord.Client(intents=intents)
+tree = app_commands.CommandTree(client)
 
-bot = commands.Bot(command_prefix="!", intents=intents)
-
-# Events
-@bot.event
-async def on_ready():
-    print(f"Logged in as {bot.user} (ID: {bot.user.id})")
-    print("Bot is online and ready.")
-
-# Commands
-@bot.command()
-async def ping(ctx):
-    await ctx.send("pong")
-
-# Image Generation (LOCAL STABLE DIFFUSION)
+# Stable Diffusion Image Generation
 async def generate_image(prompt: str, username: str) -> str:
     url = "http://127.0.0.1:7860/sdapi/v1/txt2img"
 
@@ -48,9 +41,9 @@ async def generate_image(prompt: str, username: str) -> str:
     }
 
     def call_sd():
-        r = requests.post(url, json=payload, timeout=600)
-        r.raise_for_status()
-        return r.json()
+        response = requests.post(url, json=payload, timeout=600)
+        response.raise_for_status()
+        return response.json()
 
     data = await asyncio.to_thread(call_sd)
 
@@ -64,7 +57,7 @@ async def generate_image(prompt: str, username: str) -> str:
     image_bytes = base64.b64decode(image_base64)
     image = Image.open(BytesIO(image_bytes))
 
-    # Create user folder
+    # Create user directory
     user_dir = IMAGES_DIR / username
     user_dir.mkdir(exist_ok=True)
 
@@ -74,32 +67,51 @@ async def generate_image(prompt: str, username: str) -> str:
 
     image.save(output_path)
     return str(output_path)
-    
-# !image Command
-@bot.command()
-@cooldown(1, 30, BucketType.user)
-async def image(ctx, *, prompt: str = None):
-    if not prompt:
-        await ctx.send("❌ Please provide a prompt.\nExample: `!image a cat in space`")
+
+# Slash Command: /image
+@tree.command(
+    name="image",
+    description="Generate an AI image using Stable Diffusion (local)"
+)
+@app_commands.describe(prompt="Describe the image you want to generate")
+async def image(interaction: discord.Interaction, prompt: str):
+    user_id = interaction.user.id
+    now = time.time()
+
+    # Cooldown check
+    last_used = user_cooldowns.get(user_id, 0)
+    remaining = COOLDOWN_SECONDS - (now - last_used)
+
+    if remaining > 0:
+        await interaction.response.send_message(
+            f"⏳ Please wait {int(remaining)} seconds before generating another image.",
+            ephemeral=True
+        )
         return
 
-    async with ctx.typing():
-        image_path = await generate_image(prompt, ctx.author.name)
+    # Update cooldown
+    user_cooldowns[user_id] = now
 
-    await ctx.send(
-        # content=f"🖼️ Generated image for:\n**{prompt}**",
-        file=discord.File(image_path)
-    )
+    await interaction.response.defer()
 
-# Cooldown Error
-@image.error
-async def image_error(ctx, error):
-    if isinstance(error, commands.CommandOnCooldown):
-        await ctx.send(
-            f"⏳ Please wait {int(error.retry_after)} seconds before generating another image."
+    try:
+        image_path = await generate_image(prompt, interaction.user.name)
+
+        await interaction.followup.send(
+            file=discord.File(image_path)
         )
 
+    except Exception as e:
+        await interaction.followup.send(
+            content=f"❌ Error generating image:\n`{str(e)}`"
+        )
+
+# Events
+@client.event
+async def on_ready():
+    await tree.sync()
+    print(f"Logged in as {client.user}")
+    print("Slash commands synced. Bot is ready.")
+
 # Run Bot
-bot.run(TOKEN)
-
-
+client.run(TOKEN)
