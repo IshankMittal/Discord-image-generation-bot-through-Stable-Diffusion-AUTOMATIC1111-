@@ -70,18 +70,14 @@ git clone <IshankMittal> cd <Discord-image-generation-bot-through-Stable-Diffusi
 ```
 
 5. Configure environment variables
-
-```
    Create a .env file and add:
-
+```
    DISCORD_TOKEN=your_discord_bot_token_here
 ```
 
-7. Start Stable Diffusion with API enabled
-
-```
+6. Start Stable Diffusion with API enabled
    In webui-user.bat, ensure the following line is present:
-
+```
    set COMMANDLINE_ARGS=--api
 ```
    Then run:
@@ -93,13 +89,13 @@ git clone <IshankMittal> cd <Discord-image-generation-bot-through-Stable-Diffusi
    http://127.0.0.1:7860
 ```
 
-8. Run the Discord bot
+7. Run the Discord bot
 
-   ```
+```
    python bot.py
 
    The bot should appear online in Discord.
-   ```
+```
 
 --------------------------------------------------------------------
 
