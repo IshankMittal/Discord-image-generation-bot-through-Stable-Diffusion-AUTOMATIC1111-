@@ -59,10 +59,10 @@ git clone <IshankMittal> cd <Discord-image-generation-bot-through-Stable-Diffusi
 3. Create and activate a virtual environment:
 
 ```
- python -m venv .venv
+python -m venv .venv
 ```
 ```
- .venv\Scripts\activate
+.venv\Scripts\activate
 ```
 
 4. Install required dependencies
@@ -84,7 +84,7 @@ set COMMANDLINE_ARGS=--api
 ```
    Then run:
 ```
- webui-user.bat
+webui-user.bat
 ```
 Confirm Stable Diffusion is running at:
 ```
