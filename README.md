@@ -83,9 +83,10 @@ set COMMANDLINE_ARGS=--api
 Then run:
 ```
  webui-user.bat
-
+``` 
+```
 Confirm Stable Diffusion is running at:
-   http://127.0.0.1:7860
+http://127.0.0.1:7860
 ```
 
 7. Run the Discord bot
