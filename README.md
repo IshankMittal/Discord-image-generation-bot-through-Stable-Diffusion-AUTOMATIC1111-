@@ -58,10 +58,12 @@ git clone <IshankMittal> cd <Discord-image-generation-bot-through-Stable-Diffusi
 
 3. Create and activate a virtual environment:
 
- ```
+```
  python -m venv .venv
+```
+```
  .venv\Scripts\activate
- ```
+```
 
 4. Install required dependencies
 
