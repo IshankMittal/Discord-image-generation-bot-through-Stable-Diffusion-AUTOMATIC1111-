@@ -89,6 +89,19 @@ Setup Instructions
 
    The bot should appear online in Discord.
 
+After that, you can continue writing **normal text**.
+
+---
+
+## Correct full example (with content below it)
+
+```md
+## Steps to Run the Project
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/imsoo/discord-image-generator-bot-stable-diffusion.git
+
 --------------------------------------------------------------------
 
 Usage
