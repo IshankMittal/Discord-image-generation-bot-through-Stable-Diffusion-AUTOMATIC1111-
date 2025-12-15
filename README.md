@@ -50,51 +50,50 @@ Prerequisites
 
 Setup Instructions
 
-1. Clone the repository
+1. Clone the repository:
 
 ```
 git clone <IshankMittal> cd <Discord-image-generation-bot-through-Stable-Diffusion-AUTOMATIC1111>
 ```
 
-3. Create and activate a virtual environment
+3. Create and activate a virtual environment:
 
  ```
-   python -m venv .venv
-   .venv\Scripts\activate
+ python -m venv .venv
+ .venv\Scripts\activate
  ```
 
 4. Install required dependencies
 
 ```
-   pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-5. Configure environment variables
-   Create a .env file and add:
+5. Configure environment variables:
+   Create a .env file and add
 ```
-   DISCORD_TOKEN=your_discord_bot_token_here
+DISCORD_TOKEN=your_discord_bot_token_here
 ```
 
-6. Start Stable Diffusion with API enabled
+6. Start Stable Diffusion with API enabled,
    In webui-user.bat, ensure the following line is present:
 ```
-   set COMMANDLINE_ARGS=--api
+set COMMANDLINE_ARGS=--api
 ```
-   Then run:
-
+Then run:
 ```
-   webui-user.bat
+ webui-user.bat
 
-   Confirm Stable Diffusion is running at:
+Confirm Stable Diffusion is running at:
    http://127.0.0.1:7860
 ```
 
 7. Run the Discord bot
 
 ```
-   python bot.py
+python bot.py
 
-   The bot should appear online in Discord.
+The bot should appear online in Discord.
 ```
 
 --------------------------------------------------------------------
