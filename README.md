@@ -76,9 +76,19 @@ pip install -r requirements.txt
 ```
 DISCORD_TOKEN=your_discord_bot_token_here
 ```
-6. Download
+6. Separately clone Stable Diffusion WebUI
+```
+git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
+```
+make a seperate folder and place it inside
+
+6. Then download
 ```
 v1-5-pruned-emaonly.safetensors
+```
+now go to that folder where you have placed your Stable Diffusion WebUI and
+```
+Stable Diffusion WebUI->model-> Stable-diffusion 
 ```
 
 7. Start Stable Diffusion with API enabled,
