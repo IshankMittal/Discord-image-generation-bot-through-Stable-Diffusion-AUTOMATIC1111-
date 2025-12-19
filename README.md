@@ -134,8 +134,8 @@ message content access.
 
 --------------------------------------------------------------------
 
-Final Notes
+Final Notes  
+- Stable Diffusion runs locally and must remain running  
+- Images are stored only on the local machine  
+- This project is intended for educational and personal use
 
--Stable Diffusion runs locally and must remain running
--Images are stored only on the local machine
--This project is intended for educational and personal use
