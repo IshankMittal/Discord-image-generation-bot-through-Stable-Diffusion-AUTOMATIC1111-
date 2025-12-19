@@ -132,3 +132,9 @@ This bot uses Discord slash commands instead of traditional prefix commands.
 Slash commands provide a modern, structured interface and do not require
 message content access.
 
+--------------------------------------------------------------------
+Final Notes
+
+-Stable Diffusion runs locally and must remain running
+-Images are stored only on the local machine
+-This project is intended for educational and personal use
