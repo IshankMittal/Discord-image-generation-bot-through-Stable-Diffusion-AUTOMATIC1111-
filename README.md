@@ -76,8 +76,12 @@ pip install -r requirements.txt
 ```
 DISCORD_TOKEN=your_discord_bot_token_here
 ```
+6. Download
+```
+v1-5-pruned-emaonly.safetensors
+```
 
-6. Start Stable Diffusion with API enabled,
+7. Start Stable Diffusion with API enabled,
    In webui-user.bat, ensure the following line is present:
 ```
 set COMMANDLINE_ARGS=--api
@@ -91,7 +95,7 @@ Confirm Stable Diffusion is running at:
 http://127.0.0.1:7860
 ```
 
-7. Run the Discord bot
+8. Run the Discord bot
 
 ```
 python bot.py
