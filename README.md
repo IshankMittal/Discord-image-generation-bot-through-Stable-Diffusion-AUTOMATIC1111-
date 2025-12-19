@@ -82,7 +82,7 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
 ```
 make a seperate folder and place it inside
 
-6. Then download
+7. Then download
 ```
 v1-5-pruned-emaonly.safetensors
 ```
@@ -91,7 +91,7 @@ now go to that folder where you have placed your Stable Diffusion WebUI and plac
 Stable Diffusion WebUI-> model-> Stable-diffusion 
 ```
 
-7. Start Stable Diffusion with API enabled,
+8. Start Stable Diffusion with API enabled,
    In webui-user.bat, ensure the following line is present:
 ```
 set COMMANDLINE_ARGS=--api
@@ -105,7 +105,7 @@ Confirm Stable Diffusion is running at:
 http://127.0.0.1:7860
 ```
 
-8. Run the Discord bot
+9. Run the Discord bot
 
 ```
 python bot.py
