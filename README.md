@@ -86,9 +86,9 @@ make a seperate folder and place it inside
 ```
 v1-5-pruned-emaonly.safetensors
 ```
-now go to that folder where you have placed your Stable Diffusion WebUI and
+now go to that folder where you have placed your Stable Diffusion WebUI and place this file inside Stable-diffusion 
 ```
-Stable Diffusion WebUI->model-> Stable-diffusion 
+Stable Diffusion WebUI-> model-> Stable-diffusion 
 ```
 
 7. Start Stable Diffusion with API enabled,
