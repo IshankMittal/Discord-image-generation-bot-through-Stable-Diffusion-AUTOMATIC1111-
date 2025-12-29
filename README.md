@@ -11,7 +11,7 @@ REST API, and returns the generated image back to the Discord channel. **All
 generated images are saved locally for reference and history.**
 
 
-# Features
+## Features
 
 - Generate AI images using a Discord **slash command (/image)**
 - Uses Stable Diffusion locally without paid APIs
