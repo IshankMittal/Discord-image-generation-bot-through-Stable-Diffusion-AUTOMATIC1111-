@@ -9,7 +9,7 @@ The bot listens to Discord commands, sends prompts to a local Stable Diffusion
 REST API, and returns the generated image back to the Discord channel. **All
 generated images are saved locally for reference and history.**
 
-────────────
+
 
 Features
 
