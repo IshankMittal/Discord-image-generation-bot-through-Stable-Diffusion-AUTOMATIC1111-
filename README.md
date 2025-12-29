@@ -13,7 +13,7 @@ generated images are saved locally for reference and history.**
 
 ## Features
 
-- Generate AI images using a Discord **slash command (/image)**
+- Generate AI images using a Discord **slash command `(/image)`**
 - Uses Stable Diffusion locally without paid APIs
 - GPU-accelerated image generation
 - Async-safe request handling to keep the bot responsive
@@ -21,18 +21,6 @@ generated images are saved locally for reference and history.**
 - Saves all generated images locally (image history)
 - Clean and modular project structure
 - Can be extended later to cloud or API-based image generation
-
-## Tech Stack
-
-- Python
-- discord.py
-- Discord Slash Commands (app_commands)
-- Stable Diffusion (AUTOMATIC1111)
-- REST API (local inference)
-- Requests
-- Pillow
-- Asyncio
-- NVIDIA GPU for local execution
 
  ## Prerequisites
 
