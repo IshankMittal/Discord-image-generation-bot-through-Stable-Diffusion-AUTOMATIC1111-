@@ -44,13 +44,13 @@ generated images are saved locally for reference and history.**
 
 ## Setup Instructions
 
-## 1. Clone the repository:
+### 1. Clone the repository:
 
 ```
 git clone https://github.com/IshankMittal/Discord-image-generation-bot-through-Stable-Diffusion-AUTOMATIC1111-
 ```
 
-2. Create and activate a virtual environment:
+### 2. Create and activate a virtual environment:
 
 ```
 python -m venv .venv
@@ -59,24 +59,24 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 
-3. Install required dependencies
+### 3. Install required dependencies
 
 ```
 pip install -r requirements.txt
 ```
 
-4. Configure environment variables:
+### 4. Configure environment variables:
    Create a .env file and add
 ```
 DISCORD_TOKEN=your_discord_bot_token_here
 ```
-5. Clone Stable Diffusion WebUI separately
+### 5. Clone Stable Diffusion WebUI separately
 ```
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
 ```
 Place this folder separately from the Discord bot project.
 
-6. Download Stable Diffusion model
+### 6. Download Stable Diffusion model
 ```
 v1-5-pruned-emaonly.safetensors
 ```
@@ -85,7 +85,7 @@ Place it inside: (Stable Diffusion WebUI-> model-> Stable-diffusion)
 stable-diffusion-webui/models/Stable-diffusion/
 ```
 
-7. Start Stable Diffusion with API enabled,
+### 7. Start Stable Diffusion with API enabled,
    In webui-user.bat, ensure the following line is present:
 ```
 set COMMANDLINE_ARGS=--api
@@ -99,7 +99,7 @@ Confirm Stable Diffusion is running at:
 http://127.0.0.1:7860
 ```
 
-8. Run the Discord bot
+### 8. Run the Discord bot
 
 ```
 python bot.py
