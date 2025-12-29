@@ -1,4 +1,5 @@
-Discord Image Generator Bot using Stable Diffusion (AUTOMATIC1111)
+
+# Discord Image Generator Bot using Stable Diffusion (AUTOMATIC1111)
 
 This project is a Discord bot that generates AI images using a locally hosted
 Stable Diffusion model through AUTOMATIC1111. The bot does **not rely on any paid
@@ -8,7 +9,6 @@ acceleration.
 The bot listens to Discord commands, sends prompts to a local Stable Diffusion
 REST API, and returns the generated image back to the Discord channel. **All
 generated images are saved locally for reference and history.**
-
 
 
 Features
