@@ -22,9 +22,7 @@ generated images are saved locally for reference and history.**
 - Clean and modular project structure
 - Can be extended later to cloud or API-based image generation
 
---------------------------------------------------------------------
-
-Tech Stack
+# Tech Stack
 
 - Python
 - discord.py
@@ -36,9 +34,7 @@ Tech Stack
 - Asyncio
 - NVIDIA GPU for local execution
 
---------------------------------------------------------------------
-
-Prerequisites
+ # Prerequisites
 
 - Python 3.12 for the Discord bot
 - Python 3.10 for Stable Diffusion WebUI
@@ -46,9 +42,7 @@ Prerequisites
 - Stable Diffusion WebUI (AUTOMATIC1111)
 - Discord bot token
 
---------------------------------------------------------------------
-
-Setup Instructions
+# Setup Instructions
 
 1. Clone the repository:
 
@@ -113,9 +107,7 @@ python bot.py
 
 The bot should appear online in Discord.
 
---------------------------------------------------------------------
-
-Usage
+# Usage
 
 In any Discord channel where the bot is added:
 
@@ -132,9 +124,7 @@ This bot uses Discord slash commands instead of traditional prefix commands.
 Slash commands provide a modern, structured interface and do not require
 message content access.
 
---------------------------------------------------------------------
-
-Final Notes  
+#Final Notes  
 - Stable Diffusion runs locally and must remain running  
 - Images are stored only on the local machine  
 - This project is intended for educational and personal use
