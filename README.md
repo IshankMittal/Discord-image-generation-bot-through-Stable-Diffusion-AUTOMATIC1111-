@@ -19,7 +19,6 @@ generated images are saved locally for reference and history.**
 - Async-safe request handling to keep the bot responsive
 - Cooldown system to prevent command spam
 - Saves all generated images locally (image history)
-- Clean and modular project structure
 - Can be extended later to cloud or API-based image generation
 
  ## Prerequisites
