@@ -73,6 +73,13 @@ stable-diffusion-webui/models/Stable-diffusion/
 ```
 
 ### 7. Start Stable Diffusion with API enabled,
+
+If multiple Python versions are installed, specify Python 3.10 manually
+inside `webui-user.bat`:
+
+```bat
+set PYTHON=C:\Users\YOUR_NAME\AppData\Local\Programs\Python\Python310\python.exe
+```
    In webui-user.bat, ensure the following line is present:
 ```
 set COMMANDLINE_ARGS=--api
